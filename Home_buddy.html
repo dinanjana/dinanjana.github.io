@@ -104,8 +104,57 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-left">
                     <h2 class="section-heading">Technical aspect </h2>
-                    
-                    
+                    <h3>Design</h3>
+<p>The intruder detection system is built around a standard web camera. Motion detection has been integrated into the system with the help of software programming. Any abnormalities will,
+</p>
+<ul>
+<li>Activate the web camera to capture a still image</li>
+<li>Upload the captured image to a google drive account</li>
+<li>Trigger the security alerting system.</li>
+</ul>
+<h3>Hardware and Software</h3>
+<ul>
+<li>Raspberry-pi single board computer</li>
+<li>Standard web camera</li>
+<li>Python programming</li>
+<li>OpenCV libraries</li>
+<li>pyDrive library</li>
+</ul>
+<h3>Implementation</h3>
+<h4>Motion detection:</h4>
+
+<p>Capturing the webcam stream - This feature is already integrated into OpenCV.
+OpenCV offers the possibility of subtracting two images to obtain a differential image. This feature (known as differential imaging) was used to detect motion.
+The final step was to integrate the differential image function to the script from step 1.
+If the system identifies the presence of an intruder, the security alerting system (detailed in section 5) is triggered.
+</p>
+<h4>Google drive image upload:</h4>
+
+<p>The pyDrive wrapper library that simplifies many common Google Drive API tasks was used for this purpose. The upload and authentication process is greatly simplified by pyDrive. The very first google drive access will require manual authentication. The device will then store tokens that can be used for future authentications, automating the entire process.
+Household Safety[edit]
+A secure home, does not necessarily translate to a safe home environment. Faults from within, could potentially cause severe damage to a household. The safety service provided by this device aims to address this issue, and this section explains in detail the design procedures followed to implement this feature.
+</p>
+
+<h4>Design</h4>
+<p>
+The household safety system monitor key parameters that could potentially pose a risk to the health of the house. The system has a gas sensor and a temperature sensor built into it. By processing the input received from these sensors, the system determines if the house is at risk. If it is, the security alerting mechanism is immediately called upon.
+</p>
+
+<h4>Hardware and Software</h4>
+<ul>
+
+<li>Arduino Board</li>
+<li>MQ2 Gas Sensor - sensitive to flammable and combustible gases</li>
+<li>LM35 Temperature sensor</li>
+<li>Arduino programming</li>
+</ul>
+
+<h4>Implementation</h4>
+<p>
+The MQ series of gas sensors use a small heater inside with an electro-chemical sensor. They are sensitive to a range of gases and are used indoors at ROOMtemperature. This specific sensor (the MQ2) is sensitive to flammable and combustible gasses.
+
+Both sensors output analog data. The raw data is received by the arduino board and then converted into digital form. The arduino is connected to the raspberry pi through a serial USB connection. This allows the sensor readings to be transmitted to the raspberry pi, where all the processing and decision making takes place. If the values read by each sensor exceeds a specified upper-bound, it is classified as a risk and the alerting mechanism is triggered.</p>
+</p>                   
                 </div>
             </div>
         </div>
