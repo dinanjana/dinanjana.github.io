@@ -102,9 +102,14 @@
     <section class="bg-primary" id="technical">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-left">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Technical aspect </h2>
+                    <hr>
+                    <h2>Home Buddy v1.0</h2>
+                    <hr>
                     <h3>Design</h3>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-left">
 <p>The intruder detection system is built around a standard web camera. Motion detection has been integrated into the system with the help of software programming. Any abnormalities will,
 </p>
 <ul>
@@ -154,7 +159,23 @@ The household safety system monitor key parameters that could potentially pose a
 The MQ series of gas sensors use a small heater inside with an electro-chemical sensor. They are sensitive to a range of gases and are used indoors at ROOMtemperature. This specific sensor (the MQ2) is sensitive to flammable and combustible gasses.
 
 Both sensors output analog data. The raw data is received by the arduino board and then converted into digital form. The arduino is connected to the raspberry pi through a serial USB connection. This allows the sensor readings to be transmitted to the raspberry pi, where all the processing and decision making takes place. If the values read by each sensor exceeds a specified upper-bound, it is classified as a risk and the alerting mechanism is triggered.</p>
-</p>                   
+</p>            
+
+                <div class="col-lg-8 col-lg-offset-2 text-center"><h2>Home Buddy v1.1</h2><hr></div>
+                
+                <div class="col-lg-8 col-lg-offset-2 text-left">
+                <h3>Major improvements:</h3>
+                    <ul>
+                        <li>A "PIR" motion senser introduced : <p>Now camera scans area only if a motion is detected</p></li>
+                        <li>Can be used with voice commands :<p>Now services can be activated and deactivated through voice commands.
+                        User's mobile phone is use to authentication.</p></li>
+                        <li>Situation awareness:<p>Turn services on even if user fogets to turn on services. 
+                        hSenid LBS api used for it.</p></li>
+
+
+                    </ul>
+                </div>
+
                 </div>
             </div>
         </div>
@@ -162,8 +183,10 @@ Both sensors output analog data. The raw data is received by the arduino board a
     <section class="bg-dark" id="technologies">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-left">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Technologies </h2>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-left">
                     <ul>
                     <li>Raspberry pi</li>
                     <li>Arduino</li>
